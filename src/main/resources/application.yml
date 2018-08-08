@@ -1,0 +1,23 @@
+server:
+  port: 15010
+  servlet:
+    context-path: /config
+
+management:
+  server:
+    servlet:
+      context-path: /
+
+spring:
+  application:
+    name: clinic-management-config-server
+
+  cloud:
+    config:
+      server:
+        git:
+          uri:  https://github.com/tarinibehera/clinic-management-config.git
+          clone-on-start: true
+          default-label: master
+          refresh-rate: 50000
+          
